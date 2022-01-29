@@ -1,4 +1,4 @@
-package mapstruct;
+package org.mapstruct.mapper;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
