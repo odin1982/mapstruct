@@ -70,3 +70,13 @@ public absgract class StudentMapper {
 }
 ```
 
+## Mapping multiple Objects
+
+```
+@Mapper
+public interface DeliveryAddressMapper {
+	@Mapping(source="student.name",target="name")
+	@Mapping(source="address.houseNo",target="houseNumber")
+	DeliveryAddress getDeliveryaddress(StudentEntity student, AddressEntity address);
+}
+```
