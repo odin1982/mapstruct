@@ -29,4 +29,44 @@ public interface StudentMapper{
 }
 ```
 
+## 3 Formas de crear tu Mapper
+
+### Interface
+
+```
+@Mapper
+public interface StudentMapper{
+    Student maptoEntity(StudentEntity student);
+}
+```
+
+### Interface with DEFAULT method
+
+```
+@Mapper
+public interface StudentMapper {
+   default Student getModelFromEntity(StudentEntity studentEntity){
+      Student student = new Student();
+      student.setId(studentEntity.getId());
+      student.setName(studentEntity.getName());
+      student.setClassName(studentEntity.getClassVal());
+      return student;
+   }
+}
+```
+
+### Abstract class
+
+```
+@Mapper
+public absgract class StudentMapper {
+   Student getModelFromEntity(StudentEntity studentEntity){
+      Student student = new Student();
+      student.setId(studentEntity.getId());
+      student.setName(studentEntity.getName());
+      student.setClassName(studentEntity.getClassVal());
+      return student;
+   }
+}
+```
 
