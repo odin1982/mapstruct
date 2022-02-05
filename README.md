@@ -95,3 +95,19 @@ public interface StudentMapper {
    StudentEntity getEntityFromModel(Student student);
 }
 ```
+
+## Mapping Direct Fields
+
+We'll use @InheritInverseConfiguration annotation to copy reverse configuration now.Lo que hace esta anotacion es el mapeo inverso.
+
+```
+@Mapper
+public interface StudentMapper {
+   @Mapping(target="className", source="classVal")
+   @Mapping(target="subject", source="subject.name")
+   Student getModelFromEntity(StudentEntity studentEntity);
+	
+   @InheritInverseConfiguration
+   StudentEntity getEntityFromModel(Student student);
+}
+```
