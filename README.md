@@ -80,3 +80,18 @@ public interface DeliveryAddressMapper {
 	DeliveryAddress getDeliveryaddress(StudentEntity student, AddressEntity address);
 }
 ```
+
+## Mapping nested beans
+
+```
+@Mapper
+public interface StudentMapper {
+   @Mapping(target="className", source="classVal")
+   @Mapping(target="subject", source="subject.name")
+   Student getModelFromEntity(StudentEntity studentEntity);
+	
+   @Mapping(target="classVal", source="className")
+   @Mapping(target="subject.name", source="subject")
+   StudentEntity getEntityFromModel(Student student);
+}
+```
