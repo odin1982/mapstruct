@@ -10,5 +10,10 @@ import org.mapstruct.model.DeliveryAddress;
 public interface DeliveryAddressMapper {
 	@Mapping(source="student.name",target="name")
 	@Mapping(source="address.houseNo",target="houseNumber")
-	DeliveryAddress getDeliveryaddress(StudentEntity student, AddressEntity address);
+	DeliveryAddress getDeliveryAddress(StudentEntity student, AddressEntity address);
+	
+	
+	@Mapping(source="student.name",target="name")
+	@Mapping(source="address.houseNo",target="houseNumber")
+	DeliveryAddress getDeliveryAddress(org.mapstruct.entity.mapping.implicit.type.conversion.StudentEntity student, AddressEntity address);
 }

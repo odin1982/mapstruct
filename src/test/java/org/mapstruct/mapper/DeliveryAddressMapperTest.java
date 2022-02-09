@@ -23,7 +23,7 @@ public class DeliveryAddressMapperTest {
 		address.setState("Z");
 		address.setHouseNo(1);
 
-		DeliveryAddress deliveryAddress = deliveryAddressMapper.getDeliveryaddress(student, address);
+		DeliveryAddress deliveryAddress = deliveryAddressMapper.getDeliveryAddress(student, address);
 		assertEquals(deliveryAddress.getName(), student.getName());
 		assertEquals(deliveryAddress.getCity(), address.getCity());
 		assertEquals(deliveryAddress.getState(), address.getState());
