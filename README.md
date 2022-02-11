@@ -138,3 +138,21 @@ public class Student {
 	private final int id;
 }
 ```
+
+## Using numberFormat
+
+MapStruct handles conversion of numbers to String in required format seamlessly. We can pass the required format as numberFormat during @Mapping annotation. For example, consider a case where an amount stored in numbers is to be shown in currency format.
+
+* Source − Entity has price as 350.
+
+* Target − Model to show price as $350.00.
+
+* numberFormat − Use format $#.00
+
+```
+@Mapper
+public interface CarMapper {
+   @Mapping(source = "price", target = "price", numberFormat = "$#.00")
+   Car getModelFromEntity(CarEntity carEntity);
+}
+```
